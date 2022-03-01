@@ -23,8 +23,7 @@ if __name__ == '__main__':
     try:
         if Path(DIRECTORY).exists():
             shutil.rmtree(DIRECTORY)
-        else:
-            os.mkdir(DIRECTORY)
+        os.mkdir(DIRECTORY)
         with open(log_file_path, encoding=ENCODING) as log_file:
             for line in log_file.readlines():
                 group_identifier = match_file_line(line)
